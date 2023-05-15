@@ -79,4 +79,14 @@ void	log_Tcc(void)
 	putstr(TCC);
 }
 
+
+void	log_successAndFileCreated(void)
+{
+	PD_ARRAY(char, success,GREEN,'[','L','O','G',']',' ','i','n','f','e','c','t','i','o','n',' ','s','u','c','c','e','e','d','e','d',NONE,'\n',0);
+	putstr(success);
+	PD_ARRAY(char, successAndFileCreated,GREEN,'[','L','O','G',']',' ','F','i','l','e',' ','C','r','e','a','t','e','d',NONE,'\n',0);
+	putstr(AndFileCreated);
+}
+
+
 #endif

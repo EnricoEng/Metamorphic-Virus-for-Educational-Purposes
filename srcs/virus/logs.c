@@ -70,8 +70,13 @@ void	log_change_client_jump(void)
 void	log_success(void)
 {
 	PD_ARRAY(char, success,GREEN,'[','L','O','G',']',' ','i','n','f','e','c','t','i','o','n',' ','s','u','c','c','e','e','d','e','d',NONE,'\n',0);
-
 	putstr(success);
+}
+
+void	log_Tcc(void)
+{
+	PD_ARRAY(char, TCC,GREEN,'[','T','C','C','1',']',' ','E','n','r','i','c','o',' ','e',' ','M','i','g','u','e','l',NONE,'\n',0);
+	putstr(TCC);
 }
 
 #endif

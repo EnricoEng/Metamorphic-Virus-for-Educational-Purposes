@@ -206,7 +206,7 @@ static bool	shard_block(struct code_block *blocks[NBLOCKS],
 
 static bool     want_to_permutate(uint64_t *seed)
 {
-	return random(seed) % 2;
+	return randomm(seed) % 2;
 }
 
 /*
@@ -422,7 +422,7 @@ static bool	write_permutated_code(struct safe_ptr virus_ref,
 ** - virus_buffer_size: ptr where code size is returned
 ** - virus_address_in_ref: virus func address in virus_ref
 ** - virus_address_shift: amount that virus func was shifted after permutations
-** - seed: seed used for random
+** - seed: seed used for randomm
 */
 bool		permutate_blocks(struct safe_ptr virus_ref,
 			struct safe_ptr virus_buffer_ref,

@@ -14,7 +14,7 @@
 
 static bool	want_to_permutate(uint64_t *seed)
 {
-	return random(seed) % 2;
+	return randomm(seed) % 2;
 }
 /*
 ** /!\

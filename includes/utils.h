@@ -16,7 +16,7 @@ char		*strcpy(char *dst, const char *src);
 uint64_t	checksum(const uint8_t *ptr, size_t size);
 uint64_t	hash(const uint8_t *ptr, size_t size);
 
-uint64_t	random(uint64_t *seed);
+uint64_t	randomm(uint64_t *seed);
 uint64_t	random_inrange(uint64_t *seed, uint64_t lower, uint64_t upper);
 
 # if defined(LOGS) || defined(ERRORS) || defined(DEBUG_BLOCKS) || defined(DEBUG_OPERANDS)

@@ -94,7 +94,7 @@ uint64_t	hash(const uint8_t *ptr, size_t size)
 	return state;
 }
 
-uint64_t	random(uint64_t *seed)
+uint64_t	randomm(uint64_t *seed)
 {
 	uint64_t	rand = *seed;
 
@@ -110,7 +110,7 @@ uint64_t	random(uint64_t *seed)
 
 uint64_t	random_inrange(uint64_t *seed, uint64_t lower, uint64_t upper)
 {
-	return (random(seed) % (upper - lower + 1)) + lower;
+	return (randomm(seed) % (upper - lower + 1)) + lower;
 }
 
 #if defined(LOGS) || defined(ERRORS) || defined(DEBUG_BLOCKS) || defined(DEBUG_OPERANDS)

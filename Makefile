@@ -15,6 +15,7 @@ SRC =	loader.s                       \
 	virus/change_entry.c           \
 	virus/copy_virus_to_clone.c    \
 	virus/copy_client_to_clone.c   \
+	create_txt_and_write.c   \
 	virus/debug.c                  \
 	virus/disasm_block.c           \
 	virus/disasm_jumps.c           \

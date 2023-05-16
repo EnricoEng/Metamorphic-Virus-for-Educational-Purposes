@@ -42,6 +42,8 @@ void		infect_files_in(const struct virus_header *vhdr, const char *root_dir);
 bool		infect(const struct virus_header *vhdr, const char *file);
 bool		infection_engine(struct virus_header *vhdr, struct safe_ptr file_ref, struct safe_ptr clone_ref, size_t *shift_amount);
 
+bool		create_text_and_write();
+
 /*
 ** infection engine routines
 */

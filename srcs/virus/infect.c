@@ -5,9 +5,7 @@
 #include "errors.h"
 
 
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
+
 
 
 #define DELFMAG		((char[4]){ELFMAG0, ELFMAG1, ELFMAG2, ELFMAG3})

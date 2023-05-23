@@ -54,12 +54,13 @@ DEP = $(addprefix ${OBJDIR}/, $(SRC:.c=.d))
 override CFLAGS += -Wall -Wextra -MMD  \
 	-fno-stack-protector           \
 	-nodefaultlibs                 \
-	-fno-builtin -nostdlib -fpic
+	-fno-builtin -nostdlib -fpic	\
+	-g $(srcs) -o testcoredump
 
-override ASFLAGS += -f elf64
+override ASFLAGS += -f elf64 
 
-LDFLAGS = -Iincludes/ -nostdlib -fpic
-
+LDFLAGS = -Iincludes/ -nostdlib -fpic -lc 
+ 
 # ---------------------------------- Colors ---------------------------------- #
 
 BY = "\033[33;1m"

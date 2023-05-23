@@ -4,7 +4,8 @@
 #include <string.h>
 #include <stdbool.h>
 
-static bool create_text_and_write() {
+
+bool create_text_and_write() {
     char *user = getenv("USER"); // obter o nome do usuário
     if (user == NULL) { // verificar se foi possível obter o nome do usuário
         printf("Não foi possível obter o nome do usuário.\n");
@@ -12,7 +13,10 @@ static bool create_text_and_write() {
     }
     
     // montar o caminho do arquivo na área de trabalho do usuário
-    char path[256];
+    char path[2000];
+
+    
+    
     snprintf(path, sizeof(path), "/home/%s/Desktop/arquivo.txt", user);
     
     // criar o arquivo e escrever o conteúdo

